@@ -1,0 +1,57 @@
+<!-- Mi header simplificado inspirado en arnau.dev -->
+<header class="cabecera">
+  <div class="contenedor">
+    <nav class="navegacion">
+      
+      <!-- Logo -->
+      <div class="logo-seccion">
+        <a routerLink="/" class="logo-enlace">
+          <img 
+            [src]="infoPersonal().imagenPerfil" 
+            [alt]="'Logo de ' + infoPersonal().nombre"
+            class="logo-imagen"
+            loading="eager"
+          >
+        </a>
+      </div>
+      
+      <!-- Navegación principal -->
+      <div class="menu-navegacion">
+        @for (item of elementosNavegacion; track item.ruta) {
+          <a 
+            [routerLink]="item.ruta"
+            class="enlace-navegacion"
+            [class.activo]="esSeccionActiva(item.ruta)"
+          >
+            {{ item.etiqueta }}
+          </a>
+        }
+      </div>
+      
+      <!-- Controles (solo tema) -->
+      <div class="controles">
+        <!-- Toggle de tema -->
+        <button 
+          type="button"
+          class="boton-tema"
+          (click)="alternarTemaPublico()"
+        >
+          <!-- Sol (tema claro) -->
+          @if (!esTemaOscuro()) {
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <circle cx="12" cy="12" r="5"/>
+              <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+            </svg>
+          }
+          
+          <!-- Luna (tema oscuro) -->
+          @if (esTemaOscuro()) {
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+          }
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>

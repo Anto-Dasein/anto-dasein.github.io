@@ -1,0 +1,204 @@
+/* Componente Body inspirado en arnau.dev */
+
+.body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: var(--altura-header);
+  position: relative;
+  overflow: hidden;
+}
+
+.body-contenido {
+  max-width: 800px;
+}
+
+.body-titulo {
+  font-size: var(--texto-5xl);
+  font-weight: 900;
+  color: var(--color-texto-primario);
+  margin-bottom: var(--espacio-6);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.body-descripcion {
+  font-size: var(--texto-lg);
+  color: var(--color-texto-secundario);
+  line-height: 1.6;
+  margin-bottom: var(--espacio-8);
+  max-width: 600px;
+}
+
+.body-enlaces-sociales {
+  display: flex;
+  gap: var(--espacio-6);
+  margin-bottom: var(--espacio-8);
+}
+
+.enlace-social-body {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--espacio-2);
+  color: var(--color-texto-secundario);
+  text-decoration: none;
+  font-size: var(--texto-base);
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.enlace-social-body:hover {
+  color: var(--color-texto-primario);
+}
+
+.enlace-social-body svg {
+  flex-shrink: 0;
+}
+
+.enlace-social-body span {
+  font-weight: 500;
+}
+
+.body-ubicacion {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--espacio-2);
+  font-size: var(--texto-sm);
+  color: var(--color-texto-terciario);
+  font-weight: 500;
+}
+
+/* Academic Experience Section - Sin recuadros, estilo limpio */
+.academic-experience {
+  margin-top: var(--espacio-16);
+  padding-top: var(--espacio-12);
+  border-top: 1px solid var(--color-borde);
+  max-width: 800px;
+}
+
+.academic-title {
+  font-size: var(--texto-2xl);
+  font-weight: 700;
+  color: var(--color-texto-primario);
+  margin-bottom: var(--espacio-12);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.academic-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--espacio-12);
+}
+
+.academic-card {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--espacio-4);
+}
+
+.academic-logo {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: white;
+  border: 1px solid var(--color-borde);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.academic-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 4px;
+}
+
+.academic-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.academic-company-name {
+  font-size: var(--texto-lg);
+  font-weight: 600;
+  color: var(--color-texto-primario);
+  margin-bottom: var(--espacio-1);
+  line-height: 1.3;
+}
+
+.academic-position-title {
+  font-size: var(--texto-base);
+  color: var(--color-texto-secundario);
+  margin-bottom: var(--espacio-2);
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.academic-dates {
+  font-size: var(--texto-sm);
+  color: var(--color-texto-terciario);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .body-titulo {
+    font-size: var(--texto-4xl);
+  }
+  
+  .body-descripcion {
+    font-size: var(--texto-base);
+  }
+  
+  .body-enlaces-sociales {
+    gap: var(--espacio-4);
+  }
+  
+  .enlace-social-body {
+    font-size: var(--texto-sm);
+  }
+  
+  /* Academic Experience Mobile */
+  .academic-experience {
+    margin-top: var(--espacio-12);
+    padding-top: var(--espacio-8);
+  }
+  
+  .academic-title {
+    font-size: var(--texto-xl);
+    margin-bottom: var(--espacio-8);
+  }
+  
+  .academic-grid {
+    grid-template-columns: 1fr;
+    gap: var(--espacio-8);
+  }
+  
+  .academic-card {
+    gap: var(--espacio-3);
+  }
+  
+  .academic-logo {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .academic-company-name {
+    font-size: var(--texto-base);
+  }
+  
+  .academic-position-title {
+    font-size: var(--texto-sm);
+  }
+  
+  .academic-dates {
+    font-size: var(--texto-xs);
+  }
+}

@@ -1,0 +1,94 @@
+<section class="page-layout">
+  <div class="contenedor">
+    <!-- Header de la página -->
+    <div class="portfolio-header">
+      <h1 class="portfolio-title">Projects</h1>
+      <p class="portfolio-description">
+        A collection of projects I've been working on during my learning journey. 
+        From academic exercises to personal experiments, each one represents a step forward in my development as a programmer.
+      </p>
+    </div>
+
+    <!-- Filtros de categorías -->
+    <div class="portfolio-filters">
+      @for (category of categories(); track category.id) {
+        <button 
+          class="filter-button"
+          [class.active]="category.active"
+          (click)="setActiveFilter(category.id)"
+        >
+          {{ category.name }}
+        </button>
+      }
+    </div>
+
+    <!-- Grid de proyectos -->
+    <div class="projects-grid">
+      @for (project of getFilteredProjects(); track project.id) {
+        <article class="project-card">
+          <!-- Imagen del proyecto -->
+          <div class="project-image">
+            <img [src]="getProjectImage(project)" [alt]="project.title">
+            @if (project.featured) {
+              <div class="featured-badge">Featured</div>
+            }
+          </div>
+          
+          <!-- Contenido del proyecto -->
+          <div class="project-content">
+            <div class="project-meta">
+              <span class="project-year">{{ project.year }}</span>
+              <span class="project-category">{{ project.category | titlecase }}</span>
+            </div>
+            
+            <h3 class="project-title">{{ project.title }}</h3>
+            <p class="project-description">{{ project.description }}</p>
+            
+            <!-- Tecnologías -->
+            <div class="project-technologies">
+              @for (tech of project.technologies; track tech) {
+                <span class="tech-tag">{{ tech }}</span>
+              }
+            </div>
+            
+            <!-- Enlaces -->
+            <div class="project-links">
+              @if (project.githubUrl) {
+                <a 
+                  [href]="project.githubUrl" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  class="project-link"
+                >
+                  <img src="assets/Github.svg.png" alt="GitHub" class="link-icon">
+                  <span>Code</span>
+                </a>
+              }
+              @if (project.liveUrl) {
+                <a 
+                  [href]="project.liveUrl" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  class="project-link"
+                >
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                  </svg>
+                  <span>Live Demo</span>
+                </a>
+              }
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+
+    <!-- Estado vacío cuando no hay proyectos filtrados -->
+    @if (getFilteredProjects().length === 0) {
+      <div class="empty-state">
+        <h3>No projects found</h3>
+        <p>Try selecting a different category or check back later for new projects.</p>
+      </div>
+    }
+  </div>
+</section>

@@ -1,0 +1,197 @@
+/* About Page inspirada en arnau.dev/about - Las clases page-layout y contenedor están en variables.css */
+
+/* Layout principal */
+.about-layout {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--espacio-16);
+  align-items: start;
+  padding-top: var(--espacio-16);
+  margin-bottom: var(--espacio-20);
+}
+
+/* Contenido principal */
+.about-content {
+  max-width: 700px;
+}
+
+.about-title {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--color-texto-primario);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--espacio-8);
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-6);
+}
+
+.about-paragraph {
+  font-size: var(--texto-lg);
+  color: var(--color-texto-secundario);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Sidebar derecho */
+.about-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-4);
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+
+/* Email link */
+.email-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--espacio-3);
+  color: var(--color-texto-secundario);
+  text-decoration: none;
+  font-size: var(--texto-base);
+  font-weight: 500;
+  transition: color 0.2s ease;
+  padding: var(--espacio-3) var(--espacio-4);
+  border-radius: 8px;
+}
+
+.email-link:hover {
+  color: var(--color-texto-primario);
+}
+
+.email-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  filter: opacity(0.7);
+}
+
+.email-link:hover .email-icon {
+  filter: opacity(1);
+}
+
+/* Secciones de Technologies */
+.technologies-section {
+  margin-bottom: var(--espacio-16);
+}
+
+.section-title {
+  font-size: var(--texto-2xl);
+  font-weight: 700;
+  color: var(--color-texto-primario);
+  margin-bottom: var(--espacio-8);
+  letter-spacing: -0.01em;
+}
+
+/* Grid de tecnologías */
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--espacio-4);
+}
+
+.tech-item {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-3);
+  color: var(--color-texto-secundario);
+  text-decoration: none;
+  font-size: var(--texto-sm);
+  transition: color 0.2s ease;
+  padding: var(--espacio-3);
+  border-radius: 8px;
+  border: 1px solid transparent;
+}
+
+.tech-item:hover {
+  color: var(--color-texto-primario);
+  background: var(--color-fondo-secundario);
+  border-color: var(--color-borde);
+}
+
+.tech-item img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.tech-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.tech-name {
+  font-weight: 600;
+  color: var(--color-texto-primario);
+  text-decoration: underline;
+  text-decoration-color: var(--color-acento-primario);
+  text-underline-offset: 2px;
+}
+
+.tech-description {
+  font-size: var(--texto-xs);
+  color: var(--color-texto-terciario);
+  font-weight: 400;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .about-layout {
+    gap: var(--espacio-12);
+  }
+  
+  .about-title {
+    font-size: 42px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-layout {
+    grid-template-columns: 1fr;
+    gap: var(--espacio-8);
+    padding-top: var(--espacio-12);
+    margin-bottom: var(--espacio-16);
+  }
+  
+  .about-title {
+    font-size: 36px;
+  }
+  
+  .about-paragraph {
+    font-size: var(--texto-base);
+  }
+  
+  .about-sidebar {
+    align-items: center;
+    justify-content: center;
+    min-height: auto;
+    margin-top: var(--espacio-6);
+  }
+  
+  .email-link {
+    font-size: var(--texto-sm);
+    padding: var(--espacio-2) var(--espacio-3);
+  }
+  
+  .email-icon {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .tech-grid {
+    grid-template-columns: 1fr;
+    gap: var(--espacio-3);
+  }
+  
+  .tech-item {
+    padding: var(--espacio-2);
+  }
+}

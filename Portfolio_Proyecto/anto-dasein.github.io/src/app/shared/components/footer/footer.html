@@ -1,0 +1,28 @@
+<footer class="footer">
+  <div class="contenedor">
+    <div class="footer-content">
+      <!-- Sección Built with -->
+      <div class="footer-tech">
+        <span class="footer-label">Built with:</span>
+        <div class="footer-tech-list">
+          @for (tech of tecnologias(); track tech.nombre) {
+            <a 
+              [href]="tech.url" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="footer-tech-item"
+            >
+              <img [src]="tech.logo" [alt]="tech.nombre + ' logo'">
+              <span>{{ tech.nombre }}</span>
+            </a>
+          }
+        </div>
+      </div>
+      
+      <!-- Copyright -->
+      <div class="footer-copyright">
+        <span>Copyright © {{ personalInfo().name }} {{ currentYear() }} {{ personalInfo().rights }}</span>
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,72 @@
+<section class="page-layout">
+  <div class="contenedor">
+    <div class="about-layout">
+      <!-- Contenido principal a la izquierda -->
+      <div class="about-content">
+        <!-- Título principal -->
+        <h1 class="about-title">{{ aboutInfo().title }}</h1>
+        
+        <!-- Párrafos de descripción -->
+        <div class="about-text">
+          @for (paragraph of aboutInfo().paragraphs; track paragraph) {
+            <p class="about-paragraph">{{ paragraph }}</p>
+          }
+        </div>
+      </div>
+      
+      <!-- Sidebar derecho con acciones -->
+      <div class="about-sidebar">
+        <!-- Email -->
+        <a 
+          [href]="'mailto:' + aboutInfo().email" 
+          class="email-link"
+        >
+          <img src="assets/email-svgrepo-com.svg" alt="Email icon" class="email-icon">
+          <span>{{ aboutInfo().email }}</span>
+        </a>
+      </div>
+    </div>
+    
+    <!-- Sección Technologies -->
+    <div class="technologies-section">
+      <h2 class="section-title">Technologies</h2>
+      <div class="tech-grid">
+        @for (tech of getTechnologiesByCategory('Technologies'); track tech.name) {
+          <a 
+            [href]="tech.url" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="tech-item"
+          >
+            <img [src]="tech.logo" [alt]="tech.name + ' logo'">
+            <div class="tech-info">
+              <span class="tech-name">{{ tech.name }}</span>
+              <span class="tech-description">{{ tech.description }}</span>
+            </div>
+          </a>
+        }
+      </div>
+    </div>
+    
+    <!-- Sección Tools -->
+    <div class="technologies-section">
+      <h2 class="section-title">Tools</h2>
+      <div class="tech-grid">
+        @for (tool of getTechnologiesByCategory('Tools'); track tool.name) {
+          <a 
+            [href]="tool.url" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="tech-item"
+          >
+            <img [src]="tool.logo" [alt]="tool.name + ' logo'">
+            <div class="tech-info">
+              <span class="tech-name">{{ tool.name }}</span>
+              <span class="tech-description">{{ tool.description }}</span>
+            </div>
+          </a>
+        }
+      </div>
+    </div>
+  </div>
+</section>

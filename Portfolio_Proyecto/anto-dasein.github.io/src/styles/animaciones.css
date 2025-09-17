@@ -1,0 +1,151 @@
+/* Animaciones de fondo inspiradas en arnau.dev */
+
+/* Variables para las animaciones */
+:root {
+  --animacion-cuadros-duracion: 20s;
+  --animacion-cuadros-delay: 2s;
+  --color-cuadro-1: rgba(34, 197, 94, 0.1);
+  --color-cuadro-2: rgba(34, 197, 94, 0.05);
+  --color-cuadro-3: rgba(34, 197, 94, 0.15);
+}
+
+/* Tema oscuro */
+[data-theme="dark"] {
+  --color-cuadro-1: rgba(34, 197, 94, 0.08);
+  --color-cuadro-2: rgba(34, 197, 94, 0.04);
+  --color-cuadro-3: rgba(34, 197, 94, 0.12);
+}
+
+/* Contenedor de animaciones de fondo */
+.fondo-animado {
+  position: relative;
+  overflow: hidden;
+}
+
+.fondo-animado::before,
+.fondo-animado::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Animación de cuadros flotantes */
+.cuadros-flotantes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.cuadro {
+  position: absolute;
+  border-radius: 8px;
+  animation: flotar var(--animacion-cuadros-duracion) infinite linear;
+  opacity: 0;
+}
+
+.cuadro:nth-child(1) {
+  width: 60px;
+  height: 60px;
+  background: var(--color-cuadro-1);
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.cuadro:nth-child(2) {
+  width: 40px;
+  height: 40px;
+  background: var(--color-cuadro-2);
+  left: 20%;
+  animation-delay: -5s;
+}
+
+.cuadro:nth-child(3) {
+  width: 80px;
+  height: 80px;
+  background: var(--color-cuadro-3);
+  left: 35%;
+  animation-delay: -10s;
+}
+
+.cuadro:nth-child(4) {
+  width: 50px;
+  height: 50px;
+  background: var(--color-cuadro-1);
+  left: 50%;
+  animation-delay: -2s;
+}
+
+.cuadro:nth-child(5) {
+  width: 70px;
+  height: 70px;
+  background: var(--color-cuadro-2);
+  left: 65%;
+  animation-delay: -8s;
+}
+
+.cuadro:nth-child(6) {
+  width: 45px;
+  height: 45px;
+  background: var(--color-cuadro-3);
+  left: 80%;
+  animation-delay: -15s;
+}
+
+.cuadro:nth-child(7) {
+  width: 35px;
+  height: 35px;
+  background: var(--color-cuadro-1);
+  left: 90%;
+  animation-delay: -7s;
+}
+
+/* Keyframes para la animación flotante */
+@keyframes flotar {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Efecto de gradiente sutil - REMOVIDO POR SOLICITUD DEL USUARIO */
+/* 
+.gradiente-fondo {
+  background: linear-gradient(
+    135deg,
+    var(--color-fondo-primario) 0%,
+    rgba(34, 197, 94, 0.02) 50%,
+    var(--color-fondo-primario) 100%
+  );
+}
+*/
+
+/* Animación para reducir motion si el usuario lo prefiere */
+@media (prefers-reduced-motion: reduce) {
+  .cuadro {
+    animation: none;
+  }
+  
+  .fondo-animado::before,
+  .fondo-animado::after {
+    display: none;
+  }
+}

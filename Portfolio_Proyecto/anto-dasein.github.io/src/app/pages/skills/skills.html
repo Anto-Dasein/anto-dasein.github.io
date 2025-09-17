@@ -1,0 +1,59 @@
+<section class="page-layout">
+  <div class="contenedor">
+    <div class="skills-content">
+      <!-- Header de la página -->
+      <header class="page-header">
+        <h1 class="page-title">Skills Development</h1>
+      
+      </header>
+
+      <!-- Grid de habilidades -->
+      <div class="skills-grid">
+        @for (skill of skillsConNivel; track skill.nombre) {
+          <div class="skill-item">
+            <div class="skill-header">
+              <div class="skill-name-container">
+                @if (skill.logo) {
+                  <img [src]="skill.logo" [alt]="skill.nombre + ' logo'" class="skill-logo">
+                }
+                <span class="skill-name">{{ skill.nombre }}</span>
+              </div>
+              <span class="skill-level" [class]="obtenerClaseNivel(skill.nivel)">
+                {{ skill.nivel }}
+              </span>
+            </div>
+            
+            <!-- Barra horizontal sutil -->
+            <div class="skill-bar-container">
+              <div 
+                class="skill-bar" 
+                [class]="obtenerClaseNivel(skill.nivel)"
+                [style.width.%]="skill.porcentaje"
+              ></div>
+            </div>
+          </div>
+        }
+      </div>
+
+      <!-- Leyenda de niveles -->
+      <div class="skills-legend">
+        <div class="legend-item">
+          <div class="legend-bar skill-expert"></div>
+          <span>Expert - Daily use and advanced mastery</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-bar skill-advanced"></div>
+          <span>Advanced - Solid experience in projects</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-bar skill-intermediate"></div>
+          <span>Intermediate - Fundamental knowledge</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-bar skill-learning"></div>
+          <span>Learning - Currently learning</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

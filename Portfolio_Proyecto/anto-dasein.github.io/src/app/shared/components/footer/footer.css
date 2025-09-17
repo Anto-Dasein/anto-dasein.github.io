@@ -1,0 +1,89 @@
+/* Footer inspirado en arnau.dev */
+
+.footer {
+  background: var(--color-fondo-primario);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding: var(--espacio-8) 0;
+  margin-top: auto;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--espacio-6);
+}
+
+/* Sección de tecnologías */
+.footer-tech {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-4);
+}
+
+.footer-label {
+  font-size: var(--texto-sm);
+  color: var(--color-texto-secundario);
+  font-weight: 500;
+}
+
+.footer-tech-list {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-3);
+}
+
+.footer-tech-item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--espacio-2);
+  color: var(--color-texto-secundario);
+  text-decoration: none;
+  font-size: var(--texto-sm);
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.footer-tech-item:hover {
+  color: var(--color-texto-primario);
+}
+
+.footer-tech-item img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* Copyright */
+.footer-copyright {
+  font-size: var(--texto-sm);
+  color: var(--color-texto-terciario);
+  font-weight: 400;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer {
+    padding: var(--espacio-6) 0;
+  }
+  
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--espacio-4);
+  }
+  
+  .footer-tech {
+    flex-direction: column;
+    gap: var(--espacio-3);
+  }
+  
+  .footer-tech-list {
+    justify-content: center;
+  }
+  
+  .footer-copyright {
+    order: 2;
+  }
+}
