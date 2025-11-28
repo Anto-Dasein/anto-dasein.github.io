@@ -7,7 +7,7 @@
 - CSS3
 - GitHub Pages
 
-## 📱 Características
+##  Características
 -  Responsive design
 - Standalone components
 - Signals para state management
