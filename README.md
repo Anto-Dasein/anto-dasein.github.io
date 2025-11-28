@@ -1,34 +1,30 @@
-# Antonio Espinosa - Portfolio
+##  Demo
 
-Portfolio personal desarrollado con Angular 20+ y desplegado en GitHub Pages.
 
-## 🚀 Demo
-[Ver Portfolio](https://anto-dasein.github.io/)
-
-## 🛠️ Tecnologías
+##  Tecnologías
 - Angular 20+
 - TypeScript
 - CSS3
 - GitHub Pages
 
 ## 📱 Características
-- ✅ Responsive design
-- ✅ Standalone components
-- ✅ Signals para state management
-- ✅ Lazy loading de rutas
-- ✅ Optimizado para GitHub Pages
+-  Responsive design
+- Standalone components
+- Signals para state management
+-  Lazy loading de rutas
+-  Optimizado para GitHub Pages
 
-## 🏗️ Desarrollo local
+##  Desarrollo local
 ```bash
 cd Portfolio_Proyecto/anto-dasein.github.io
 npm install
 ng serve
 ```
 
-## 📦 Build
+##  Build
 ```bash
 ng build --configuration production
 ```
 
 ---
-Desarrollado por [Antonio Espinosa](https://github.com/Anto-Dasein)
+Desarrollado por (https://github.com/Anto-Dasein)
